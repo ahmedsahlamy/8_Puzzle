@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="parentLayout" fx:id="parentLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="550.0" style="-fx-background-color: #cbe3d8;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.PuzzleGUI">
+   <children>
+      <Pane id="puzzleLayout" fx:id="puzzleLayout" layoutX="182.0" layoutY="14.0" prefHeight="530.0" prefWidth="530.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="2.0" />
+      <VBox id="controlVBox" fx:id="controlVBox" layoutX="64.0" layoutY="500.0" prefHeight="160.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <HBox id="optionsHBox" fx:id="optionsHBox" prefHeight="70.0" prefWidth="530.0" spacing="10.0">
+               <children>
+                  <VBox id="radioButtonsVBox" fx:id="radioButtonsVBox" prefHeight="70.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <RadioButton id="BFSRadioBtn" fx:id="BFSRadioBtn" mnemonicParsing="false" selected="true" style="-fx-text-fill: #0e485c;" text="BFS">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="algoSelectToggle" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton id="DFSRadioBtn" fx:id="DFSRadioBtn" mnemonicParsing="false" style="-fx-text-fill: #0e485c;" text="DFS" toggleGroup="$algoSelectToggle" />
+                        <RadioButton id="ASManRadioBtn" fx:id="ASManRadioBtn" mnemonicParsing="false" style="-fx-text-fill: #0e485c;" text="A* MAN" toggleGroup="$algoSelectToggle" />
+                        <RadioButton id="ASEucRadioBtn" fx:id="ASEucRadioBtn" mnemonicParsing="false" style="-fx-text-fill: #0e485c;" text="A* EUC" toggleGroup="$algoSelectToggle" />
+                     </children>
+                  </VBox>
+                  <VBox id="animationCtrVBox" fx:id="animationCtrVBox" prefHeight="70.0" prefWidth="450.0">
+                     <children>
+                        <Slider id="speedSlider" fx:id="speedSlider" min="10.0" prefHeight="25.0" prefWidth="436.0" style="-fx-border-color: #accbde; -fx-border-radius: 10;" value="55.0" />
+                        <Label id="animationSpeedLabel" fx:id="animationSpeedLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="436.0" style="-fx-text-fill: #0e485c;" text="Animation Speed" textAlignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox id="btnDataHBox" fx:id="btnDataHBox" prefHeight="86.0" prefWidth="526.0" spacing="10.0">
+               <children>
+                  <Button id="shuffleBtn" fx:id="shuffleBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="75.0" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 5; -fx-text-fill: #0e485c;" text="Shuffle">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="MS Outlook" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button id="solveBtn" fx:id="solveBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="75.0" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-text-fill: #0e485c; -fx-border-radius: 5;" text="Solve">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="MS Outlook" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button id="stopBtn" fx:id="stopBtn" alignment="CENTER" disable="true" mnemonicParsing="false" prefHeight="80.0" prefWidth="75.0" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 5; -fx-text-fill: #0e485c;" text="Stop">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="MS Outlook" size="16.0" />
+                     </font>
+                  </Button>
+                  <VBox prefHeight="70.0" prefWidth="110.0" style="-fx-border-color: #43688e; -fx-border-radius: 5;">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField id="element00" fx:id="element00" alignment="CENTER" style="-fx-border-color: #0e485c; -fx-background-color: transparent; -fx-border-radius: 3;" text="0" />
+                              <TextField id="element01" fx:id="element01" alignment="CENTER" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 3;" text="1" />
+                              <TextField id="element02" fx:id="element02" alignment="CENTER" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 3;" text="2" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField id="element10" fx:id="element10" alignment="CENTER" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 3;" text="3" />
+                              <TextField id="element11" fx:id="element11" alignment="CENTER" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 3;" text="4" />
+                              <TextField id="element12" fx:id="element12" alignment="CENTER" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 3;" text="5" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField id="element20" fx:id="element20" alignment="CENTER" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 3;" text="6" />
+                              <TextField id="element21" fx:id="element21" alignment="CENTER" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 3;" text="7" />
+                              <TextField id="element22" fx:id="element22" alignment="CENTER" style="-fx-background-color: transparent; -fx-border-color: #0e485c; -fx-border-radius: 3;" text="8" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox id="infoLabelsVBox" fx:id="infoLabelsVBox" prefHeight="86.0" prefWidth="143.0" spacing="5.0">
+                     <children>
+                        <Label id="costLabel" fx:id="costLabel" prefHeight="18.0" prefWidth="210.0" style="-fx-text-fill: #0e485c;" text="Cost=0" />
+                        <Label id="nodesExpandedLabel" fx:id="nodesExpandedLabel" style="-fx-text-fill: #0e485c;" text="Nodes Expanded=0" />
+                        <Label id="searchDepthLabel" fx:id="searchDepthLabel" style="-fx-text-fill: #0e485c;" text="Search Depth=0" />
+                        <Label id="runningTimeLabel" fx:id="runningTimeLabel" style="-fx-text-fill: #0e485c;" text="Running Time=0" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
